@@ -1,4 +1,5 @@
-import { useEffect, useRef } from "react";
+import { useRef } from "react";
+import { useEffect } from "react";
 
 const usePrevios = value => {
   const ref = useRef();

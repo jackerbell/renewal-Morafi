@@ -1,7 +1,7 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice } from "@reduxjs/toolkit";
 
 export const userSlice = createSlice({
-  name: 'User',
+  name: "User",
   initialState: {
     user: null,
     list: null,
@@ -13,7 +13,7 @@ export const userSlice = createSlice({
         localStorage.removeItem("actkn");
       }else{
         if(action.payload.token) {
-          localStorage.setItem('actkn',action.payload.token);
+          localStorage.setItem("actkn",action.payload.token);
         }
       }
 

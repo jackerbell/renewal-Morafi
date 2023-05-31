@@ -1,8 +1,8 @@
 import privateClient from "../client/private.client";
 
 const favoriteEndPoints = {
-  list: 'user/favorites',
-  add:'user/favorites',
+  list: "user/favorites",
+  add:"user/favorites",
   remove:({favoriteId}) => `user/favorites/${favoriteId}`
 };
 

@@ -1,11 +1,11 @@
 const mediaType = {
-  movie:'movie',
-  tb:'tv'
+  movie:"movie",
+  tb:"tv"
 };
 
 const mediaCategory = {
-  popular:'popular',
-  top_rated:'top_rated'
+  popular:"popular",
+  top_rated:"top_rated"
 };
 
 const backdropPath = imgEndPoint => `https://image.tmbd.org/t/p/original${imgEndPoint}`;

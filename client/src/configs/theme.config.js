@@ -1,36 +1,36 @@
-import {createTheme} from '@mui/material/styles';
-import {colors} from '@mui/material';
+import {createTheme} from "@mui/material/styles";
+import {colors} from "@mui/material";
 
 export const themeModes = {
-  dark: 'dark',
-  light: 'light'
+  dark: "dark",
+  light: "light"
 };
 
 const themeConfigs = {
   custom: ({mode}) => {
     const customPalette = mode === themeModes.dark ? {
       primary: {
-        main: '#ff0000',
-        contrastText: '#ffffff'
+        main: "#FFB900",
+        contrastText: "#ffffff"
       },
       secondary: {
-        main: '#f44336',
-        contrastText: '#ffffff'
+        main: "#f44336",
+        contrastText: "#ffffff"
       },
       background: {
-        default: '#000000',
-        paper: '#131313'
-      },
+        default: "#000000",
+        paper: "#131313"
+      }
     } : {
       primary: {
-        main: '#ff0000',
+        main: "#FF0000",
       },
       secondary: {
-        main: '#f44336',
+        main: "#f44336",
       },
       background: {
-        default: colors.grey['100'],
-      },
+        default: colors.grey["100"],
+      }
     }
 
     return createTheme({

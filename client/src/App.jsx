@@ -1,11 +1,11 @@
 import { ThemeProvider } from "@mui/material/styles";
-import { useSelector } from 'react-redux';
+import { useSelector } from "react-redux";
 import themeConfigs from "./configs/theme.config";
-import { ToastContainer } from 'react-toastify';
+import { ToastContainer } from "react-toastify";
 import CssBaseline  from "@mui/material/CssBaseline";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import MainLayout from "./components/layout/MainLayout.jsx";
-import PageWrapper from './components/common/PageWrapper.jsx';
+import PageWrapper from "./components/common/PageWrapper.jsx";
 import routes from "./routes/routes";
 
 const App = () => {
@@ -29,7 +29,7 @@ const App = () => {
       {/* app routes */}
       <BrowserRouter>
         <Routes>
-          <Route path='/' element={<MainLayout/>}>
+          <Route path="/" element={<MainLayout/>}>
             {routes.map((route,index) => (
               route.index ? (
                 <Route

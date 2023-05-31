@@ -1,73 +1,73 @@
-import HomePage from '../pages/HomePage.jsx';
-import PersonDetail from '../pages/PersonDetail.jsx';
-import FavoriteList from '../pages/FavoriteList.jsx';
-import MediaDetail from '../pages/MediaDetail.jsx';
-import MediaList from '../pages/MedalList.jsx';
-import MediaSearch from '../pages/MediaSearch.jsx';
-import PasswordUpdate from '../pages/PasswordUpdate.jsx';
-import ReviewList from '../pages/ReviewList';
-import ProtectedPage from '../components/common/ProtectedPage.jsx'
+import HomePage from "../pages/HomePage.jsx";
+import PersonDetail from "../pages/PersonDetail.jsx";
+import FavoriteList from "../pages/FavoriteList.jsx";
+import MediaDetail from "../pages/MediaDetail.jsx";
+import MediaList from "../pages/MedalList.jsx";
+import MediaSearch from "../pages/MediaSearch.jsx";
+import PasswordUpdate from "../pages/PasswordUpdate.jsx";
+import ReviewList from "../pages/ReviewList";
+import ProtectedPage from "../components/common/ProtectedPage.jsx"
 
 export const routesGen = {
-  home: '/',
+  home: "/",
   mediaList: (type) => `/${type}`,
   mediaDetail: (type, id) => `/${type}/${id}`,
-  mediaSearch: '/search',
+  mediaSearch: "/search",
   person: (id) => `/person/${id}`,
-  favoriteList: '/favorites',
-  reviewList: '/reviews',
-  passwordUpdate: 'password-update'
+  favoriteList: "/favorites",
+  reviewList: "/reviews",
+  passwordUpdate: "password-update"
 }
 
 const routes = [
   {
     index: true,
     element: <HomePage />,
-    state: 'home'
+    state: "home"
   },
   {
-    path: '/person/:personId',
+    path: "/person/:personId",
     element: <PersonDetail />,
-    state: 'person.detail'
+    state: "person.detail"
   },
   {
-    path: '/search',
+    path: "/search",
     element: <MediaSearch />,
-    state: 'search'
+    state: "search"
   },
   {
-    path: '/password-update',
+    path: "/password-update",
     element: (
       <ProtectedPage>
         <PasswordUpdate />
       </ProtectedPage>
     ),
-    state: 'password.update'
+    state: "password.update"
   },
   {
-    path: '/favorites',
+    path: "/favorites",
     element: (
       <ProtectedPage>
         <FavoriteList />
       </ProtectedPage>
     ),
-    state: 'favorites'
+    state: "favorites"
   },
   {
-    path: '/reviews',
+    path: "/reviews",
     element: (
       <ProtectedPage>
         <ReviewList />
       </ProtectedPage>
     ),
-    state: 'reviews'
+    state: "reviews"
   },
   {
-    path: '/:mediaType',
+    path: "/:mediaType",
     element: <MediaList />,
   },
   {
-    path:'/:mediaType/:mediaId',
+    path:"/:mediaType/:mediaId",
     element: <MediaDetail />
   }
 ];

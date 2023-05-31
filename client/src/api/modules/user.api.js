@@ -1,11 +1,11 @@
-import privateClient from '../client/private.client.js';
-import publicClient from '../client/public.client.js';
+import privateClient from "../client/private.client.js";
+import publicClient from "../client/public.client.js";
 
 const userEndPoints = {
-  signin: 'user/signin',
-  signup: 'user/signup',
-  getInfo: 'user/info',
-  passwordUpdate: 'user/update-password',
+  signin: "user/signin",
+  signup: "user/signup",
+  getInfo: "user/info",
+  passwordUpdate: "user/update-password",
 };
 
 const userApi = {

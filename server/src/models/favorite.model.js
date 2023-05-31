@@ -6,12 +6,12 @@ export default mongoose.model(
   mongoose.Schema({
     user: {
       type: Schema.Types.ObjectId,
-      ref: 'User',
+      ref: "User",
       required: true
     },
     mediaType: {
       type: String,
-      enum: ['tv','movie'],
+      enum: ["tv","movie"],
       required: true
     },
     mediaId: {

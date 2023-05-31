@@ -1,9 +1,9 @@
 import responseHandler from "../handlers/response.handler.js";
-import tmdbApi from '../tmdb/tbdb.api.js';
+import tmdbApi from "../tmdb/tbdb.api.js";
 import userModel from "../models/user.model.js";
 import favoriteModel from "../models/favorite.model.js";
 import reviewModel from "../models/review.model.js";
-import tokenMiddleware from '../middlewares/token.middleware.js';
+import tokenMiddleware from "../middlewares/token.middleware.js";
 
 const getList = async(req,res) => {
   try {
@@ -37,7 +37,7 @@ const search = async(req,res) => {
    const response  = await tmdbApi.mediaSearch({
     query,
     page,
-    mediaType:mediaType === 'people'?'person':mediaType
+    mediaType:mediaType === "people"?"person":mediaType
    });
 
    responseHandler.ok(res,response);
@@ -77,7 +77,7 @@ const getDetail = async(req,res) => {
       }
     }
 
-    media.reviews = await reviewModel.find({mediaId}).populate('user').sort('-createdAt');
+    media.reviews = await reviewModel.find({mediaId}).populate("user").sort("-createdAt");
 
     responseHandler.ok(res,media);
   } catch (error) {

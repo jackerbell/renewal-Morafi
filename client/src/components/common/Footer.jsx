@@ -1,29 +1,27 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import { Button, Paper, Stack } from '@mui/material';
-import { Box } from '@mui/material';
-
-import Container from './Container';
-import Logo from './Logo';
-import menuConfigs from '../../configs/menu.config.js'
+import { Button, Paper, Stack, Box } from "@mui/material";
+import React from "react";
+import Container from "./Container.jsx";
+import Logo from "./Logo.jsx";
+import menuConfigs from "../../configs/menu.config.js"
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
     <div>
       <Container>
-        <Paper square={true} sx={{backgroundImage: 'unset', padding: '2rem'}}>
+        <Paper square={true} sx={{backgroundImage: "unset", padding: "2rem"}}>
           <Stack 
-            alignItems='center'
-            justifyContent='space-between'
-            direction={{xs: 'column', md: 'row'}}
-            sx={{height: 'max-content'}}
+            alignItems="center"
+            justifyContent="space-between"
+            direction={{xs: "column", md: "row"}}
+            sx={{height: "max-content"}}
           >
             <Logo />
             <Box>
               {menuConfigs.main.map((item,index)=> (
                 <Button
                   key={index}
-                  sx={{color: 'inherit'}}
+                  sx={{color: "inherit"}}
                   component={Link}
                   to={item.path}
                 >

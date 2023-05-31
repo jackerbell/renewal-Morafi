@@ -23,7 +23,7 @@ privateClient.interceptors.response.use(response=>{
   if(response && response.data) {
     return response.data;
   }
-  return response
+  return response;
 }, err => {
   throw err.response.data
 });

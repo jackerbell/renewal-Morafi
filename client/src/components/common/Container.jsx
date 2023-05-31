@@ -17,13 +17,13 @@ const Container = ({header, children}) => {
             marginX: "auto",
             width: "100%",
             "&::before": {
-              content:"",
+              content:'""',
               position:"absolute",
               left: { xs: "20px", md:"0"},
               top: "100%",
               height: "5px",
               width:"100px",
-              backgroundColor:"main.primary"
+              backgroundColor:"primary.main"
             }
           }}>
             <Typography varient="h5" fontWeight="700" textTransform="uppercase">

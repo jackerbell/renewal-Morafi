@@ -1,5 +1,5 @@
 import LogoutOutlinedIcon from "@mui/icons-material/LogoutOutlined";
-import { ListItem, ListItemButton, ListItemIcon, ListItemText, Menu, Typography } from "@mui/material";
+import { ListItemButton, ListItemIcon, ListItemText, Menu, Typography } from "@mui/material";
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
@@ -29,7 +29,7 @@ const UserMenu = () => {
             open={Boolean(anchorEl)}
             anchorEl={anchorEl}
             onClose={()=>setAnchorEl(null)}
-            PaperProps={{ sx: { padding: 0 }}}
+            PaperProps={{ sx: { padding : 0 }}}
           >
             {menuConfigs.user.map((item,index)=>(
               <ListItemButton

@@ -15,4 +15,5 @@ export const authModalSlice = createSlice({
 export const {
   setIsAuthModalOpen
 } = authModalSlice.actions
+
 export default authModalSlice.reducer

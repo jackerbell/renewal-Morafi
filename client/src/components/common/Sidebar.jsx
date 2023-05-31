@@ -46,7 +46,7 @@ const Sidebar = ({ open, toggleSidebar }) => {
             onClick={()=> toggleSidebar(false)}
           >
             <ListItemIcon>{item.icon}</ListItemIcon>
-            <ListItemText disableTypography primary={<Typography>
+            <ListItemText disableTypography primary={<Typography textTransform="uppercase">
               {item.display}
             </Typography>} />
           </ListItemButton>
@@ -67,7 +67,7 @@ const Sidebar = ({ open, toggleSidebar }) => {
             onClick={()=> toggleSidebar(false)}
           >
             <ListItemIcon>{item.icon}</ListItemIcon>
-            <ListItemText disableTypography primary={<Typography>
+            <ListItemText disableTypography primary={<Typography textTransform="uppercase">
               {item.display}
             </Typography>} />
           </ListItemButton>
@@ -75,7 +75,7 @@ const Sidebar = ({ open, toggleSidebar }) => {
         </>)}
 
         <Typography variant="h6" marginBottom="20px">THEME</Typography>
-        <ListItemButton>
+        <ListItemButton onClick={onSwitchTheme}>
           <ListItemIcon>
             {themeMode === themeModes.dark && <DarkModeOutlinedIcon />}
             {themeMode === themeModes.light && <WbSunnyOutlinedIcon />}

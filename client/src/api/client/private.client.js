@@ -1,5 +1,6 @@
 import axios from "axios";
 import queryString from "query-string";
+
 const baseURL = "http://127.0.0.1:5000/api/v1/";
 
 const privateClient = axios.create({
@@ -14,7 +15,7 @@ privateClient.interceptors.request.use(async config =>  {
     ...config,
     headers: {
       "Content-Type": "application/json",
-      "Authorizaation": `Bearer ${localStorage.getItem("actkn")}`
+      "Authorization": `Bearer ${localStorage.getItem("actkn")}`
     }
   }
 });

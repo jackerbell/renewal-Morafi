@@ -41,12 +41,12 @@ router.post(
   );
   
   router.post(
-    "/signup",
+    "/signin",
   body("username")
-    .exists().withMessage("displayName is required!")
+    .exists().withMessage("username is required!")
     .isLength({min:8}).withMessage("username minimun 8 characters"),
   body("password")
-    .exists().withMessage("displayName is required!")
+    .exists().withMessage("password is required!")
     .isLength({min:8}).withMessage("password minimun 8 characters"),
   requestHandler.validate,
   userController.signin
@@ -100,7 +100,7 @@ router.post(
   body("mediaRate")
     .exists().withMessage("mediaRate is required"),
   requestHandler.validate,
-  favoriteController.addFavortie      
+  favoriteController.addFavorite      
 );
 
 router.delete(

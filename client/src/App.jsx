@@ -8,6 +8,11 @@ import MainLayout from "./components/layout/MainLayout.jsx";
 import PageWrapper from "./components/common/PageWrapper.jsx";
 import routes from "./routes/routes";
 
+import "react-toastify/dist/ReactToastify.css"; // 로그인 응답 시 상태표시 박스 
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+
 const App = () => {
   const {themeMode} = useSelector((state) => state.themeMode)
   return (

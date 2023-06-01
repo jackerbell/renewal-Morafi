@@ -7,7 +7,7 @@ import { toast } from "react-toastify";
 import * as Yup from "yup";
 
 import userApi from "../../api/modules/user.api.js";
-import { setIsAuthModalOpen } from "../../redux/features/authModalSlice";
+import { setIsAuthModalOpen } from "../../redux/features/authModalSlice.js";
 import { setUser } from "../../redux/features/userSlice.js";
 
 const SigninForm = ( { switchAuthState } ) => {
@@ -32,6 +32,7 @@ const SigninForm = ( { switchAuthState } ) => {
     onSubmit: async values => {
       setErrorMessage(undefined);
       setIsLoginRequest(true);
+      console.log('submit!!')
       const { response, err } = await userApi.signin(values);
       setIsLoginRequest(false);
 

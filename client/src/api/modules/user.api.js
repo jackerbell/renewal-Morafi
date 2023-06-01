@@ -1,7 +1,7 @@
 import privateClient from "../client/private.client.js";
 import publicClient from "../client/public.client.js";
 
-const userEndPoints = {
+const userEndpoints = {
   signin: "user/signin",
   signup: "user/signup",
   getInfo: "user/info",
@@ -11,47 +11,49 @@ const userEndPoints = {
 const userApi = {
   signin: async ({username,password}) => {
     try {
+      console.log('send request');
       const response = await publicClient.post(
-        userEndPoints.signin,
+        userEndpoints.signin,
         {username,password}
       );
 
       return { response };
     } catch (error) {
-      return error;
+      console.log('error:');
+      return {error};
     }
   },
   signup: async ({username,password,confirmPassword,displayName}) => {
     try {
       const response = await publicClient.post(
-        userEndPoints.signup,
+        userEndpoints.signup,
         {username,password,confirmPassword,displayName}
       );
 
       return { response };
     } catch (error) {
-      return error;
+      return {error};
     }
   },
   getInfo: async () => {
     try {
-      const response = await privateClient.get(userEndPoints.getInfo);
-
+      const response = await privateClient.get(userEndpoints.getInfo);
       return { response };
     } catch (error) {
-      return error;
+      console.log({error});
+      return {error};
     }
   },
   passwordUpdate: async ({password,newPassword,confirmNewPassword}) => {
     try {
       const response = await privateClient.put(
-        userEndPoints.signup,
+        userEndpoints.passwordUpdate,
         {password,newPassword,confirmNewPassword}
       );
 
       return { response };
     } catch (error) {
-      return error;
+      return {error};
     }
   },
 }

@@ -8,13 +8,13 @@ const mediaCategory = {
   top_rated:"top_rated"
 };
 
-const backdropPath = imgEndPoint => `https://image.tmbd.org/t/p/original${imgEndPoint}`;
+const backdropPath = imgEndPoint => `https://image.tmdb.org/t/p/original${imgEndPoint}`;
 
-const posterPath = imgEndPoint => `https://image.tmbd.org/t/p/w500${imgEndPoint}`;
+const posterPath = imgEndPoint => `https://image.tmdb.org/t/p/w500${imgEndPoint}`;
 
 const youtubePath = videoId => `https://www.youtube.com/embed/${videoId}?controls=0`;
 
-const tmbdConfigs = {
+const tmdbConfigs = {
   mediaType,
   mediaCategory,
   backdropPath,
@@ -22,4 +22,4 @@ const tmbdConfigs = {
   youtubePath,
 }
 
-export default tmbdConfigs;
+export default tmdbConfigs;

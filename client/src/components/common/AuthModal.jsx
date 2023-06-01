@@ -1,10 +1,10 @@
-import { Box,Modal} from '@mui/material';
-import { useEffect, useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { setIsAuthModalOpen } from '../../redux/features/authModalSlice';
-import Logo from './Logo.jsx';
-import SigninForm from './SigninForm';
-import SignupForm from './SignupForm';
+import { Box,Modal} from "@mui/material";
+import { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { setIsAuthModalOpen } from "../../redux/features/authModalSlice";
+import Logo from "./Logo.jsx";
+import SigninForm from "./SigninForm.jsx";
+import SignupForm from "./SignupForm.jsx";
 
 const actionState = {
   signin: "signin",
@@ -32,16 +32,16 @@ const AuthModal = () => {
     <Modal open={isAuthModalOpen} onClose={handleClose}>
       <Box sx={{
         position: "absolute",
-        top: "50%",
-        left: "50%",
+        top: "25%",
+        left: "30%",
         transfrom: "translate(-50%, -50%)",
         width: "100%",
-        maxWidth: "600px",
+        maxWidth: "37.5rem",
         padding: 4,
         outline: "none"
       }}>
         <Box sx={{ padding: 4, boxShadow: 24, backgroundColor: "background.paper"}}>
-          <Box sx={{ textAlign: "center", marginBottom: '2rem' }}>
+          <Box sx={{ textAlign: "center", marginBottom: "2rem" }}>
             <Logo />
           </Box>
 

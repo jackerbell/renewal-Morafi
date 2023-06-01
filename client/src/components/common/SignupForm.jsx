@@ -109,7 +109,7 @@ const SignupForm = ({ switchAuthState }) => {
         fullWidth
         size="large"
         variant="contained"
-        sx={{ marginTop: 4 }}
+        sx={{ marginTop: 1 }}
         loading={isLoginRequest}
       >
         sign up
@@ -117,7 +117,7 @@ const SignupForm = ({ switchAuthState }) => {
 
       <Button
         fullWidth
-        sx={{ marginTop: 1 }}
+        sx={{ marginTop: 2 }}
         onClick={() => switchAuthState()}
       >
         sign in

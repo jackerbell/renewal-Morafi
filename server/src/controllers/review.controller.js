@@ -28,10 +28,10 @@ const remove = async (req,res) => {
 
     const review = await reviewModel.findOne({
       _id: reviewId,
-      user: req.user,
+      user: req.user.id,
     });
     if(!review){
-      responseHandler.notfound(res);
+      return responseHandler.notfound(res);
     }
     await review.remove();
 

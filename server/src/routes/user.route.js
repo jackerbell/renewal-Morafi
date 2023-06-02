@@ -4,7 +4,7 @@ import favoriteController from "../controllers/favorite.controller.js";
 import userController from "../controllers/user.controller.js";
 import requestHandler from "../handlers/request.handler.js";
 import userModel from "../models/user.model.js";
-import tokenMiddleware from "../middlewares/token.middleware.js";
+import tokenMiddlerware from "../middlewares/token.middleware.js";
 
 const router = express.Router();
 
@@ -54,7 +54,7 @@ router.post(
 
 router.put(
   "/update-password",
-  tokenMiddleware.auth,
+  tokenMiddlerware.auth,
   body("password")
     .exists().withMessage("password is required")
     .isLength({min:8}).withMessage("password minimun 8 characters"),
@@ -74,19 +74,19 @@ router.put(
 
 router.get(
   "/info",
-  tokenMiddleware.auth,
+  tokenMiddlerware.auth,
   userController.getInfo
 );
 
 router.get(
   "/favorites",
-  tokenMiddleware.auth,
+  tokenMiddlerware.auth,
   favoriteController.getFavoritesOfUser
 );
 
 router.post(
   "/favorites",
-  tokenMiddleware.auth,
+  tokenMiddlerware.auth,
   body("mediaType")
     .exists().withMessage("mediaType is required")
     .custom(type => ["movie","tv"].includes(type)).withMessage("mainType invalid"),
@@ -105,7 +105,7 @@ router.post(
 
 router.delete(
   "/favorites/:favoriteId",
-  tokenMiddleware.auth,
+  tokenMiddlerware.auth,
   favoriteController.removeFavorite
 )
 

@@ -3,7 +3,7 @@ import tmdbApi from "../tmdb/tmdb.api.js";
 import userModel from "../models/user.model.js";
 import favoriteModel from "../models/favorite.model.js";
 import reviewModel from "../models/review.model.js";
-import tokenMiddleware from "../middlewares/token.middleware.js";
+import tokenMiddlerware from "../middlewares/token.middleware.js";
 
 const getList = async(req,res) => {
   try {
@@ -66,7 +66,7 @@ const getDetail = async(req,res) => {
 
     media.images = await tmdbApi.mediaImages(params);
 
-    const tokenDecoded = tokenMiddleware.tokenDecode(req);
+    const tokenDecoded = tokenMiddlerware.tokenDecode(req);
 
     if(tokenDecoded){
       const user = await userModel.findById(tokenDecoded.data);

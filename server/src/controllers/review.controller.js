@@ -1,7 +1,6 @@
 import responseHandler from "../handlers/response.handler.js";
 import reviewModel from "../models/review.model.js";
 
-
 const create = async (req,res) => {
   try {
     const {movieId} = req.params;
@@ -12,6 +11,7 @@ const create = async (req,res) => {
     });
 
     await review.save();
+    
     responseHandler.created(res,{
       ...review._doc,
       id: review.id,

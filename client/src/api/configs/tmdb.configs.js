@@ -1,6 +1,6 @@
 const mediaType = {
   movie:"movie",
-  tb:"tv"
+  tv:"tv"
 };
 
 const mediaCategory = {

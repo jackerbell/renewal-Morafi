@@ -2,7 +2,7 @@ import HomePage from "../pages/HomePage.jsx";
 import PersonDetail from "../pages/PersonDetail.jsx";
 import FavoriteList from "../pages/FavoriteList.jsx";
 import MediaDetail from "../pages/MediaDetail.jsx";
-import MediaList from "../pages/MedalList.jsx";
+import MediaList from "../pages/MediaList.jsx";
 import MediaSearch from "../pages/MediaSearch.jsx";
 import PasswordUpdate from "../pages/PasswordUpdate.jsx";
 import ReviewList from "../pages/ReviewList";

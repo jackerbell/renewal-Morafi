@@ -1,7 +1,7 @@
-const favoirteUtils = {
+const favoriteUtils = {
   check: ({listFavorites,mediaId}) => 
     listFavorites && listFavorites
-    .find(e => e.mediaId.toString() === mediaId.toString()) !== undefined
+    .find(e => e.mediaId.toString() === mediaId.toString()) 
 };
 
-export default favoirteUtils;
+export default favoriteUtils;

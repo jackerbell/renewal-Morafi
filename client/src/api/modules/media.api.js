@@ -13,7 +13,8 @@ const mediaApi = {
       const response = await publicClient.get(
         mediaEndpoints.list({ mediaType, mediaCategory, page })
       );
-
+      console.log(mediaType, mediaCategory, page);
+      console.log(response.results);
       return { response };
     } catch (err) { return { err }; }
   },

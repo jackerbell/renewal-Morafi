@@ -15,6 +15,6 @@ const modelOptions = {
   },
   versonKey: false,
   timestamps: true
-}
+};
 
 export default modelOptions;

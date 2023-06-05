@@ -3,40 +3,41 @@ import modelOptions from "./model.options.js";
 import crypto from "crypto";
 
 const userSchema = new mongoose.Schema({
-  username:{
+  username: {
     type: String,
     required: true,
     unique: true
   },
-  displayName:{
+  displayName: {
     type: String,
-    required: true,  
+    required: true
   },
-  password:{
+  password: {
     type: String,
     required: true,
-    select: false  
+    select: false
   },
-  salt:{
+  salt: {
     type: String,
-    required: true,  
-    select: false  
-  },
-},modelOptions)
+    required: true,
+    select: false
+  }
+}, modelOptions);
 
-userSchema.methods.setPassword = function(password) {
+userSchema.methods.setPassword = function (password) {
   this.salt = crypto.randomBytes(16).toString("hex");
+
   this.password = crypto.pbkdf2Sync(
     password,
     this.salt,
     1000,
     64,
-    "sha512",
+    "sha512"
   ).toString("hex");
 };
 
-userSchema.methods.validPassword = function(password) {
-  const hash = crypto.pbkdf2Sync (
+userSchema.methods.validPassword = function (password) {
+  const hash = crypto.pbkdf2Sync(
     password,
     this.salt,
     1000,
@@ -45,8 +46,9 @@ userSchema.methods.validPassword = function(password) {
   ).toString("hex");
 
   return this.password === hash;
-}
+};
 
-const userModel = mongoose.model("User",userSchema);
+const userModel = mongoose.model("User", userSchema);
 
 export default userModel;
+

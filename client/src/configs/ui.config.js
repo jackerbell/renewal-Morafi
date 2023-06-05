@@ -23,7 +23,7 @@ const uiConfigs = {
       WebkitBoxOrient: "vertical",
       WebkitLineClamp: lines
     }),
-    maniContent: {
+    mainContent: {
       maxWidth: "1366px",
       margin: "auto",
       padding: 2

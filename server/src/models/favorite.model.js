@@ -1,4 +1,4 @@
-import mongoose, {Schema} from "mongoose";
+import mongoose, { Schema } from "mongoose";
 import modelOptions from "./model.options.js";
 
 export default mongoose.model(
@@ -11,7 +11,7 @@ export default mongoose.model(
     },
     mediaType: {
       type: String,
-      enum: ["tv","movie"],
+      enum: ["tv", "movie"],
       required: true
     },
     mediaId: {

@@ -37,6 +37,7 @@ const reviewApi = {
   
       return { response };
     } catch (error) {
+      console.log(error);
       return {error}; 
     }
   },

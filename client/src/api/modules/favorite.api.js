@@ -41,10 +41,7 @@ const favoriteApi = {
       const response = await privateClient.delete(favoriteEndpoints.remove({ favoriteId }));
 
       return { response };
-    } catch (err) { 
-      console.log(err);  
-      return { err }; 
-    }
+    } catch (err) { return { err }; }
   }
 };
 

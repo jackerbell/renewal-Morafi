@@ -1,7 +1,9 @@
 import { Box,Modal} from "@mui/material";
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { setIsAuthModalOpen } from "../../redux/features/authModalSlice";
+
+import { setAuthModalOpen } from "../../redux/features/authModalSlice.js";
+
 import Logo from "./Logo.jsx";
 import SigninForm from "./SigninForm.jsx";
 import SignupForm from "./SignupForm.jsx";
@@ -12,24 +14,24 @@ const actionState = {
 }
 
 const AuthModal = () => {
-  const { isAuthModalOpen } = useSelector((state) => state.authModal);
+  const { authModalOpen } = useSelector((state) => state.authModal);
   
   const dispatch = useDispatch();
 
   const [action, setAction] = useState(actionState.signin);
 
   useEffect(() => {
-    if(isAuthModalOpen){
+    if(authModalOpen){
       setAction(actionState.signin)
     }
-  }, [isAuthModalOpen])
+  }, [authModalOpen])
 
-  const handleClose = () => dispatch(setIsAuthModalOpen(false))
+  const handleClose = () => dispatch(setAuthModalOpen(false))
 
   const switchAuthState = (state) => setAction(state)
   
   return (
-    <Modal open={isAuthModalOpen} onClose={handleClose}>
+    <Modal open={authModalOpen} onClose={handleClose}>
       <Box sx={{
         position: "absolute",
         top: "25%",

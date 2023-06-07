@@ -1,12 +1,14 @@
 import { Box } from "@mui/material";
 import { SwiperSlide } from "swiper/react";
-import tmdbConfigs from "../../api/configs/tmdb.configs";
-import NavigationSwiper from "./NavigationSwiper";
+
+import tmdbConfigs from "../../api/configs/tmdb.configs.js";
+
+import NavigationSwiper from "./NavigationSwiper.jsx";
 
 const BackdropSlide = ({ backdrops }) => {
   return (
     <NavigationSwiper>
-      {backdrops.splice(0, 10).map((item, index) => (
+      {[...backdrops].splice(0, 10).map((item, index) => (
         <SwiperSlide key={index}>
           <Box sx={{
             paddingTop: "60%",

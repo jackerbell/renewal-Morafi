@@ -1,22 +1,19 @@
 import PlayArrowIcon from "@mui/icons-material/PlayArrow";
-import {Box, Button, Chip, Divider, stack, Typography, useTheme, Stack} from "@mui/material";
+import {Box, Button, Chip, Divider, Typography, useTheme, Stack} from "@mui/material";
 import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
-import { Autoplay } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { toast } from "react-toastify";
 
-import { setIsGlobalLoading } from "../../redux/features/globalLoadingSlice.js";
-import { routesGen } from "../../routes/routes.jsx";
-
+import { setGlobalLoading } from "../../redux/features/globalLoadingSlice.js";
 import uiConfigs from "../../configs/ui.config.js";
-
-import CircularRate from "./CircularRate.jsx";
-
 import tmdbConfigs from "../../api/configs/tmdb.configs.js";
 import genreApi from "../../api/modules/genre.api.js";
 import mediaApi from "../../api/modules/media.api.js";
+
+import CircularRate from "./CircularRate.jsx";
+import { routesGen } from "../../routes/routes.jsx";
 
 const HeroSlide = ({ mediaType, mediaCategory }) => {
   const theme = useTheme();
@@ -38,11 +35,11 @@ const HeroSlide = ({ mediaType, mediaCategory }) => {
 
       if(response) setMovies(response.results);
       if(err) toast.error(err.message);
-      dispatch(setIsGlobalLoading(false));
+      dispatch(setGlobalLoading(false));
     };
 
     const getGenres = async () => {
-      dispatch(setIsGlobalLoading(true));
+      dispatch(setGlobalLoading(true));
       const {response,err} = await genreApi.getList({mediaType});
 
       if(response) {
@@ -51,7 +48,7 @@ const HeroSlide = ({ mediaType, mediaCategory }) => {
       } 
       if(err) {
         toast.error(err.message);
-        setIsGlobalLoading(false);
+        setGlobalLoading(false);
       } 
     };
 
@@ -112,7 +109,7 @@ const HeroSlide = ({ mediaType, mediaCategory }) => {
               position: "absolute",
               top: 0,
               left: 0,
-              paddingX: {sm: "10px", md: "5rem", lg: "10rem"} 
+              paddingX: { sm: "10px", md: "5rem", lg: "10rem" } 
             }}>
               <Box sx={{
                 height: "100%",
@@ -120,7 +117,7 @@ const HeroSlide = ({ mediaType, mediaCategory }) => {
                 alignItems: "center",
                 paddingX: "1.875rem",
                 color: "text.primary",
-                width: {sm: "unset", md: "30%", lg: "40%"}
+                width: { sm: "unset", md: "30%", lg: "40%" }
               }}> 
                 <Stack spacing={4} direction="column">
                   {/* title */}

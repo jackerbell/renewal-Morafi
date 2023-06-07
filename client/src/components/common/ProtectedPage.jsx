@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { setIsAuthModalOpen } from "../../redux/features/authModalSlice"
+
+import { setAuthModalOpen } from "../../redux/features/authModalSlice.js"
 
 const ProtectedPage = ({children}) => {
   const dispatch = useDispatch();
@@ -8,7 +9,7 @@ const ProtectedPage = ({children}) => {
   const { user } = useSelector((state) => state.user);
 
   useEffect(() => {
-    dispatch(setIsAuthModalOpen(!user));
+    dispatch(setAuthModalOpen(!user));
   }, [user, dispatch])
   
   return (

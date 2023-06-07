@@ -7,25 +7,23 @@ export const userSlice = createSlice({
     listFavorites: []
   },
   reducers: {
-    setUser: (state,action) => {
-      if(action.payload === null){
+    setUser: (state, action) => {
+      if (action.payload === null) {
         localStorage.removeItem("actkn");
-      }else{
-        if(action.payload.token) {
-          localStorage.setItem("actkn",action.payload.token);
-        }
+      } else {
+        if (action.payload.token) localStorage.setItem("actkn", action.payload.token);
       }
 
       state.user = action.payload;
     },
-    setListFavorites: (state,action) => {
+    setListFavorites: (state, action) => {
       state.listFavorites = action.payload;
     },
-    removeFavorite: (state,action) => {
-      const {mediaId} = action.payload;
+    removeFavorite: (state, action) => {
+      const { mediaId } = action.payload;
       state.listFavorites = [...state.listFavorites].filter(e => e.mediaId.toString() !== mediaId.toString());
     },
-    addFavorite: (state,action) => {
+    addFavorite: (state, action) => {
       state.listFavorites = [action.payload, ...state.listFavorites];
     }
   }

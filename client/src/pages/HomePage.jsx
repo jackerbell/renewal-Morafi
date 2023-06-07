@@ -1,8 +1,10 @@
-import HeroSlide from "../components/common/HeroSlide.jsx";
-import tmdbConfigs from "../api/configs/tmdb.configs.js";
 import { Box } from "@mui/material";
+
+import tmdbConfigs from "../api/configs/tmdb.configs.js";
 import uiConfigs from "../configs/ui.config.js";
+
 import Container from "../components/common/Container.jsx";
+import HeroSlide from "../components/common/HeroSlide.jsx";
 import MediaSlide from "../components/common/MediaSlide.jsx";
 
 const HomePage = () => {

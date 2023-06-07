@@ -7,7 +7,7 @@ import { toast } from "react-toastify";
 import * as Yup from "yup";
 
 import userApi from "../../api/modules/user.api.js";
-import { setIsAuthModalOpen } from "../../redux/features/authModalSlice.js";
+import { setAuthModalOpen } from "../../redux/features/authModalSlice.js";
 import { setUser } from "../../redux/features/userSlice.js";
 
 const SigninForm = ( { switchAuthState } ) => {
@@ -39,7 +39,7 @@ const SigninForm = ( { switchAuthState } ) => {
       if (response) {
         signinForm.resetForm();
         dispatch(setUser(response));
-        dispatch(setIsAuthModalOpen(false));
+        dispatch(setAuthModalOpen(false));
         toast.success("Sign in success");
       }
 

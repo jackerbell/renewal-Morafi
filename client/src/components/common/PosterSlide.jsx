@@ -1,12 +1,14 @@
 import { Box } from "@mui/material";
 import { SwiperSlide } from "swiper/react";
-import tmdbConfigs from "../../api/configs/tmdb.configs";
-import AutoSwiper from "./AutoSwiper";
+
+import tmdbConfigs from "../../api/configs/tmdb.configs.js";
+
+import AutoSwiper from "./AutoSwiper.jsx";
 
 const PosterSlide = ({ posters }) => {
   return (
     <AutoSwiper>
-      {posters.splice(0, 10).map((item, index) => (
+      {[...posters].splice(0, 10).map((item, index) => (
         <SwiperSlide key={index}>
           <Box sx={{
             paddingTop: "160%",

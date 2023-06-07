@@ -1,6 +1,7 @@
 import { SwiperSlide } from "swiper/react";
-import AutoSwiper from "./AutoSwiper";
-import MediaItem from "./MediaItem";
+
+import AutoSwiper from "./AutoSwiper.jsx";
+import MediaItem from "./MediaItem.jsx";
 
 const RecommendSlide = ({medias, mediaType}) => {
   return (

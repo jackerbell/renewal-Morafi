@@ -1,14 +1,15 @@
-import { Drawer, List, ListItemButton, ListItemIcon, ListItemText, Stack, Toolbar, Typography} from "@mui/material"
+import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import {Link} from "react-router-dom";
-import menuConfigs from "../../configs/menu.config.js";
-import Logo from "./Logo.jsx";
-import uiConfigs from "../../configs/ui.config.js";
+import { Drawer, List, ListItemButton, ListItemIcon, ListItemText, Stack, Toolbar, Typography } from "@mui/material"
 import DarkModeOutlinedIcon from "@mui/icons-material/DarkModeOutlined";
 import WbSunnyOutlinedIcon from "@mui/icons-material/WbSunnyOutlined";
 
-import { themeModes } from "../../configs/theme.config";
-import { setThemeMode } from "../../redux/features/themeModeSlice";
+import menuConfigs from "../../configs/menu.config.js";
+import uiConfigs from "../../configs/ui.config.js";
+import { themeModes } from "../../configs/theme.config.js";
+import { setThemeMode } from "../../redux/features/themeModeSlice.js";
+
+import Logo from "./Logo.jsx";
 
 const Sidebar = ({ open, toggleSidebar }) => {
   const dispatch = useDispatch();

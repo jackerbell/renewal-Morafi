@@ -8,8 +8,9 @@ import { Link } from "react-router-dom";
 
 import menuConfigs from "../../configs/menu.config.js";
 import { themeModes } from "../../configs/theme.config.js";
-import { setIsAuthModalOpen } from "../../redux/features/authModalSlice.js";
+import { setAuthModalOpen } from "../../redux/features/authModalSlice.js";
 import { setThemeMode } from "../../redux/features/themeModeSlice.js";
+
 import Logo from "./Logo.jsx";
 import UserMenu from "./UserMenu.jsx";
 import Sidebar from "./Sidebar.jsx";
@@ -107,7 +108,7 @@ const Topbar = () => {
             >
               {!user && <Button
                 varient="contained"
-                onClick={()=> dispatch(setIsAuthModalOpen(true))}
+                onClick={()=> dispatch(setAuthModalOpen(true))}
               >
                   sign in
                 </Button>}

@@ -1,15 +1,17 @@
+import { useEffect, useState } from "react";
 import DeleteIcon from "@mui/icons-material/Delete";
 import { LoadingButton } from "@mui/lab";
 import { Box, Button, Grid } from "@mui/material";
-import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { toast } from "react-toastify";
-import MediaItem from "../components/common/MediaItem";
-import Container from "../components/common/Container";
+
 import uiConfigs from "../configs/ui.config.js";
-import favoriteApi from "../api/modules/favorite.api";
-import { setGlobalLoading } from "../redux/features/globalLoadingSlice";
-import { removeFavorite } from "../redux/features/userSlice";
+import favoriteApi from "../api/modules/favorite.api.js";
+import { setGlobalLoading } from "../redux/features/globalLoadingSlice.js";
+import { removeFavorite } from "../redux/features/userSlice.js";
+
+import MediaItem from "../components/common/MediaItem.jsx";
+import Container from "../components/common/Container.jsx";
 
 const FavoriteItem = ({ media, onRemoved }) => {
   const dispatch = useDispatch();

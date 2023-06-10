@@ -1,2 +1,0 @@
-Username: mern-varcel
-password: 5YqFWLvh64ujOzKB

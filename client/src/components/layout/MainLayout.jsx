@@ -1,17 +1,15 @@
-import { useEffect } from "react";
-import { Outlet } from "react-router-dom";
 import { Box } from "@mui/material";
+import { Outlet } from "react-router-dom";
+import Footer from "../common/Footer";
+import GlobalLoading from "../common/GlobalLoading";
+import Topbar from "../common/Topbar";
+import AuthModal from "../common/AuthModal";
 import { useDispatch, useSelector } from "react-redux";
+import { useEffect } from "react";
 import { toast } from "react-toastify";
-
-import userApi from "../../api/modules/user.api.js";
-import favoriteApi from "../../api/modules/favorite.api.js";
-import { setListFavorites, setUser } from "../../redux/features/userSlice.js";
-
-import Footer from "../common/Footer.jsx";
-import GlobalLoading from "../common/GlobalLoading.jsx";
-import Topbar from "../common/Topbar.jsx";
-import AuthModal from "../common/AuthModal.jsx";
+import userApi from "../../api/modules/user.api";
+import favoriteApi from "../../api/modules/favorite.api";
+import { setListFavorites, setUser } from "../../redux/features/userSlice";
 
 const MainLayout = () => {
   const dispatch = useDispatch();

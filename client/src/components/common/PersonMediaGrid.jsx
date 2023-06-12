@@ -1,11 +1,9 @@
-import { useEffect, useState } from "react";
 import { Button, Grid } from "@mui/material";
+import { useEffect, useState } from "react";
+import tmdbConfigs from "../../api/configs/tmdb.configs";
+import personApi from "../../api/modules/person.api";
+import MediaItem from "./MediaItem";
 import { toast } from "react-toastify";
-
-import tmdbConfigs from "../../api/configs/tmdb.configs.js";
-import personApi from "../../api/modules/person.api.js";
-
-import MediaItem from "./MediaItem.jsx";
 
 const PersonMediaGrid = ({ personId }) => {
   const [medias, setMedias] = useState([]);

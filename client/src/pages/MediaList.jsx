@@ -3,15 +3,17 @@ import { Box, Button, Stack, Typography } from "@mui/material";
 import { useEffect, useState, useMemo } from "react";
 import { useDispatch } from "react-redux";
 import { useParams } from "react-router-dom";
-import tmdbConfigs from "../api/configs/tmdb.configs";
-import mediaApi from "../api/modules/media.api";
-import uiConfigs from "../configs/ui.configs";
-import HeroSlide from "../components/common/HeroSlide";
-import MediaGrid from "../components/common/MediaGrid";
-import { setAppState } from "../redux/features/appStateSlice";
-import { setGlobalLoading } from "../redux/features/globalLoadingSlice";
 import { toast } from "react-toastify";
-import usePrevious from "../hooks/usePrevious";
+
+import tmdbConfigs from "../api/configs/tmdb.configs.js";
+import mediaApi from "../api/modules/media.api.js";
+import uiConfigs from "../configs/ui.config.js";
+import { setAppState } from "../redux/features/appStateSlice.js";
+import { setGlobalLoading } from "../redux/features/globalLoadingSlice.js";
+
+import HeroSlide from "../components/common/HeroSlide.jsx";
+import MediaGrid from "../components/common/MediaGrid.jsx";
+import usePrevious from "../hooks/usePrevious.jsx";
 
 const MediaList = () => {
   const { mediaType } = useParams();
@@ -118,7 +120,7 @@ const MediaList = () => {
           loading={mediaLoading}
           onClick={onLoadMore}
         >
-          load more
+          Load More!
         </LoadingButton>
       </Box>
     </>

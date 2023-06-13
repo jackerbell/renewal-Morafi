@@ -1,19 +1,17 @@
-import { useState, useEffect } from "react";
-import { useDispatch } from "react-redux";
-import { Link } from "react-router-dom";
 import { LoadingButton } from "@mui/lab";
 import { Box, Button, Divider, Stack, Typography } from "@mui/material";
-import DeleteIcon from "@mui/icons-material/Delete";
 import dayjs from "dayjs";
+import { useEffect, useState } from "react";
+import { useDispatch } from "react-redux";
 import { toast } from "react-toastify";
-
-import tmdbConfigs from "../api/configs/tmdb.configs.js";
-import reviewApi from "../api/modules/review.api.js";
-import uiConfigs from "../configs/ui.config.js";
-import { setGlobalLoading } from "../redux/features/globalLoadingSlice.js";
-
-import Container from "../components/common/Container.jsx";
-import { routesGen } from "../routes/routes.jsx";
+import { Link } from "react-router-dom";
+import tmdbConfigs from "../api/configs/tmdb.configs";
+import reviewApi from "../api/modules/review.api";
+import Container from "../components/common/Container";
+import uiConfigs from "../configs/ui.configs";
+import { setGlobalLoading } from "../redux/features/globalLoadingSlice";
+import DeleteIcon from "@mui/icons-material/Delete";
+import { routesGen } from "../routes/routes";
 
 const ReviewItem = ({ review, onRemoved }) => {
   const [onRequest, setOnRequest] = useState(false);
@@ -21,8 +19,7 @@ const ReviewItem = ({ review, onRemoved }) => {
   const onRemove = async () => {
     if (onRequest) return;
     setOnRequest(true);
-    const { response, err } = await reviewApi.remove({ reviewId: review.id }); 
-    console.log(`res: ${response}, reviewId: ${review.id}`)
+    const { response, err } = await reviewApi.remove({ reviewId: review.id });
     setOnRequest(false);
 
     if (err) toast.error(err.message);
@@ -36,22 +33,20 @@ const ReviewItem = ({ review, onRemoved }) => {
     <Box sx={{
       position: "relative",
       display: "flex",
-      flexDirection: { xs: "column", md: "row"},
-      padding:1,
+      flexDirection: { xs: "column", md: "row" },
+      padding: 1,
       opacity: onRequest ? 0.6 : 1,
       "&:hover": { backgroundColor: "background.paper" }
     }}>
-      <Box sx={{ width: {xs: 0, md: "10%"}}}>
-        <Link 
-          to={routesGen.mediaDetail(review.mediaType,review.mediaId)}
-          style={{color:"unset", textDecoration:"none" }}
+      <Box sx={{ width: { xs: 0, md: "10%" } }}>
+        <Link
+          to={routesGen.mediaDetail(review.mediaType, review.mediaid)}
+          style={{ color: "unset", textDecoration: "none" }}
         >
-          <Box
-            sx={{
-              paddingTop: "160%",
-              ...uiConfigs.style.backgroundImage(tmdbConfigs.posterPath(review.mediaPoster))
-            }}             
-          />
+          <Box sx={{
+            paddingTop: "160%",
+            ...uiConfigs.style.backgroundImage(tmdbConfigs.posterPath(review.mediaPoster))
+          }} />
         </Link>
       </Box>
 
@@ -60,15 +55,15 @@ const ReviewItem = ({ review, onRemoved }) => {
         padding: { xs: 0, md: "0 2rem" }
       }}>
         <Stack spacing={1}>
-          <Link 
-            to={ routesGen.mediaDetail(review.mediaType, review.mediaId) }
+          <Link
+            to={routesGen.mediaDetail(review.mediaType, review.mediaid)}
             style={{ color: "unset", textDecoration: "none" }}
           >
             <Typography
               variant="h6"
               sx={{ ...uiConfigs.style.typoLines(1, "left") }}
             >
-              {review.mediaTitle}  
+              {review.mediaTitle}
             </Typography>
           </Link>
           <Typography variant="caption">
@@ -81,21 +76,21 @@ const ReviewItem = ({ review, onRemoved }) => {
       <LoadingButton
         variant="contained"
         sx={{
-          position: { xs: "relatvie", md: "absolute" },
+          position: { xs: "relative", md: "absolute" },
           right: { xs: 0, md: "10px" },
           marginTop: { xs: 2, md: 0 },
           width: "max-content"
         }}
-        startIcon={<DeleteIcon/>}
+        startIcon={<DeleteIcon />}
         loadingPosition="start"
         loading={onRequest}
         onClick={onRemove}
       >
-        Remove!
+        remove
       </LoadingButton>
     </Box>
-  )
-}
+  );
+};
 
 const ReviewList = () => {
   const [reviews, setReviews] = useState([]);
@@ -130,31 +125,28 @@ const ReviewList = () => {
   };
 
   const onRemoved = (id) => {
+    console.log({ reviews });
     const newReviews = [...reviews].filter(e => e.id !== id);
+    console.log({ newReviews });
     setReviews(newReviews);
     setFilteredReviews([...newReviews].splice(0, page * skip));
     setCount(count - 1);
   };
 
-
   return (
-    <Box
-      sx={{...uiConfigs.style.mainContent}}
-    >
+    <Box sx={{ ...uiConfigs.style.mainContent }}>
       <Container header={`Your reviews (${count})`}>
         <Stack spacing={2}>
-          {filteredReviews.map((item)=>(
-            <Box
-              key={item.id}
-            >
+          {filteredReviews.map((item) => (
+            <Box key={item.id}>
               <ReviewItem review={item} onRemoved={onRemoved} />
               <Divider sx={{
-                display: { xs: "block", md: "none"}
+                display: { xs: "block", md: "none" }
               }} />
             </Box>
           ))}
           {filteredReviews.length < reviews.length && (
-            <Button onClick={onLoadMore}>Load More</Button>
+            <Button onClick={onLoadMore}>load more</Button>
           )}
         </Stack>
       </Container>

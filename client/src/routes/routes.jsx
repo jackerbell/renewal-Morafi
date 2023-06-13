@@ -1,12 +1,12 @@
-import HomePage from "../pages/HomePage.jsx";
-import PersonDetail from "../pages/PersonDetail.jsx";
-import FavoriteList from "../pages/FavoriteList.jsx";
-import MediaDetail from "../pages/MediaDetail.jsx";
-import MediaList from "../pages/MediaList.jsx";
-import MediaSearch from "../pages/MediaSearch.jsx";
-import PasswordUpdate from "../pages/PasswordUpdate.jsx";
+import HomePage from "../pages/HomePage";
+import PersonDetail from "../pages/PersonDetail";
+import FavoriteList from "../pages/FavoriteList";
+import MediaDetail from "../pages/MediaDetail";
+import MediaList from "../pages/MediaList";
+import MediaSearch from "../pages/MediaSearch";
+import PasswordUpdate from "../pages/PasswordUpdate";
 import ReviewList from "../pages/ReviewList";
-import ProtectedPage from "../components/common/ProtectedPage.jsx"
+import ProtectedPage from "../components/common/ProtectedPage";
 
 export const routesGen = {
   home: "/",
@@ -17,7 +17,7 @@ export const routesGen = {
   favoriteList: "/favorites",
   reviewList: "/reviews",
   passwordUpdate: "password-update"
-}
+};
 
 const routes = [
   {
@@ -64,10 +64,10 @@ const routes = [
   },
   {
     path: "/:mediaType",
-    element: <MediaList />,
+    element: <MediaList />
   },
   {
-    path:"/:mediaType/:mediaId",
+    path: "/:mediaType/:mediaId",
     element: <MediaDetail />
   }
 ];

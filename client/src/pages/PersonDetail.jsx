@@ -1,14 +1,16 @@
 import { Box, Toolbar, Typography, Stack } from "@mui/material";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import PersonMediaGrid from "../components/common/PersonMediaGrid";
-import tmdbConfigs from "../api/configs/tmdb.configs";
-import uiConfigs from "../configs/ui.configs";
-import Container from "../components/common/Container";
-import personApi from "../api/modules/person.api";
 import { toast } from "react-toastify";
 import { useDispatch } from "react-redux";
-import { setGlobalLoading } from "../redux/features/globalLoadingSlice";
+
+import tmdbConfigs from "../api/configs/tmdb.configs.js";
+import uiConfigs from "../configs/ui.config.js";
+import personApi from "../api/modules/person.api.js";
+import { setGlobalLoading } from "../redux/features/globalLoadingSlice.js";
+
+import Container from "../components/common/Container.jsx";
+import PersonMediaGrid from "../components/common/PersonMediaGrid.jsx";
 
 const PersonDetail = () => {
   const { personId } = useParams();

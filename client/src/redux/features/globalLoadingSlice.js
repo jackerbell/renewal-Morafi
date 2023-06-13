@@ -6,14 +6,14 @@ export const globalLoadingSlice = createSlice({
     globalLoading: false
   },
   reducers: {
-    setGlobalLoading: (state, action) => {
-      state.globalLoading = action.payload;
-    }
+    setGlobalLoading: (state,action) => {
+      state.globalLoading = action.payload
+    },
   }
 });
 
 export const {
   setGlobalLoading
-} = globalLoadingSlice.actions;
+} = globalLoadingSlice.actions
 
-export default globalLoadingSlice.reducer;
+export default globalLoadingSlice.reducer

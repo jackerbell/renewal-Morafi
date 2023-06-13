@@ -1,13 +1,14 @@
-import { LoadingButton } from "@mui/lab";
-import { Alert, Box, Button, Stack, TextField } from "@mui/material";
-import { useFormik } from "formik";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
-import { toast } from "react-toastify";
+import { Alert, Box, Button, Stack, TextField } from "@mui/material";
+import { LoadingButton } from "@mui/lab";
+import { useFormik } from "formik";
 import * as Yup from "yup";
-import userApi from "../../api/modules/user.api";
-import { setAuthModalOpen } from "../../redux/features/authModalSlice";
-import { setUser } from "../../redux/features/userSlice";
+import { toast } from "react-toastify";
+
+import userApi from "../../api/modules/user.api.js";
+import { setAuthModalOpen } from "../../redux/features/authModalSlice.js";
+import { setUser } from "../../redux/features/userSlice.js";
 
 const SignupForm = ({ switchAuthState }) => {
   const dispatch = useDispatch();
@@ -109,7 +110,7 @@ const SignupForm = ({ switchAuthState }) => {
         fullWidth
         size="large"
         variant="contained"
-        sx={{ marginTop: 4 }}
+        sx={{ marginTop: 1 }}
         loading={isLoginRequest}
       >
         sign up
@@ -117,7 +118,7 @@ const SignupForm = ({ switchAuthState }) => {
 
       <Button
         fullWidth
-        sx={{ marginTop: 1 }}
+        sx={{ marginTop: 2 }}
         onClick={() => switchAuthState()}
       >
         sign in

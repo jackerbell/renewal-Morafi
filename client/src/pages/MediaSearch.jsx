@@ -2,13 +2,11 @@ import { LoadingButton } from "@mui/lab";
 import { Box, Button, Stack, TextField, Toolbar } from "@mui/material";
 import { useState, useEffect, useCallback } from "react";
 import { toast } from "react-toastify";
+import mediaApi from "../api/modules/media.api";
+import MediaGrid from "../components/common/MediaGrid";
+import uiConfigs from "../configs/ui.configs";
 
-import mediaApi from "../api/modules/media.api.js";
-import uiConfigs from "../configs/ui.config.js";
-
-import MediaGrid from "../components/common/MediaGrid.jsx";
-
-const mediaTypes = ["movie","tv","people"];
+const mediaTypes = ["movie", "tv", "people"];
 let timer;
 const timeout = 500;
 
@@ -31,30 +29,28 @@ const MediaSearch = () => {
 
       setOnSearch(false);
 
-      if(err) toast.error(err.message);
-      if(response) {
-        if(page>1) setMedias(m => [...m, ...response.results]);
+      if (err) toast.error(err.message);
+      if (response) {
+        if (page > 1) setMedias(m => [...m, ...response.results]);
         else setMedias([...response.results]);
       }
     },
-    [mediaType, query, page]
-  )
+    [mediaType, query, page],
+  );
 
   useEffect(() => {
     if (query.trim().length === 0) {
       setMedias([]);
       setPage(1);
-    } else search()
+    } else search();
   }, [search, query, mediaType, page]);
-  
 
   useEffect(() => {
     setMedias([]);
     setPage(1);
   }, [mediaType]);
-  
 
-  const onCategroyChange =  ( selectedCategroy ) => setMediaType(selectedCategroy);
+  const onCategoryChange = (selectedCategory) => setMediaType(selectedCategory);
 
   const onQueryChange = (e) => {
     const newQuery = e.target.value;
@@ -67,49 +63,49 @@ const MediaSearch = () => {
 
   return (
     <>
-     <Toolbar />
-     <Box sx={{...uiConfigs.style.mainContent}}>
-      <Stack spacing={2}>
-        <Stack
-          spacing={2}
-          direction="row"
-          justifyContent="center"
-          sx={{width:"100%"}}
-        >
-          {mediaTypes.map((item,index) => (
-            <Button
-              size="large"
-              key={index}
-              variant={mediaType === item ? "contained" : "text"}
-              sx={{
-                color: mediaType === item ? "primart.contrastText" : "text.primary"
-              }}
-              onClick={() => onCategroyChange(item)}
-            >
-              {item}
-            </Button>
-          ))}
-        </Stack>
-        <TextField
-          color="success"
-          placeholder="Search Morafi"
-          sx={{ width: "100%" }}
-          autoFocus
-          onChange={onQueryChange}
-        />
-
-        <MediaGrid medias={medias} mediaType={mediaType} />
-
-        {medias.length > 0 && (
-          <LoadingButton
-           loading={onSearch}
-           onClick={() => setPage(page + 1)}
+      <Toolbar />
+      <Box sx={{ ...uiConfigs.style.mainContent }}>
+        <Stack spacing={2}>
+          <Stack
+            spacing={2}
+            direction="row"
+            justifyContent="center"
+            sx={{ width: "100%" }}
           >
-            Load More!
-          </LoadingButton>
-        )}
-      </Stack>
-     </Box> 
+            {mediaTypes.map((item, index) => (
+              <Button
+                size="large"
+                key={index}
+                variant={mediaType === item ? "contained" : "text"}
+                sx={{
+                  color: mediaType === item ? "primary.contrastText" : "text.primary"
+                }}
+                onClick={() => onCategoryChange(item)}
+              >
+                {item}
+              </Button>
+            ))}
+          </Stack>
+          <TextField
+            color="success"
+            placeholder="Search New Morafi!"
+            sx={{ width: "100%" }}
+            autoFocus
+            onChange={onQueryChange}
+          />
+
+          <MediaGrid medias={medias} mediaType={mediaType} />
+
+          {medias.length > 0 && (
+            <LoadingButton
+              loading={onSearch}
+              onClick={() => setPage(page + 1)}
+            >
+              load more
+            </LoadingButton>
+          )}
+        </Stack>
+      </Box>
     </>
   );
 };

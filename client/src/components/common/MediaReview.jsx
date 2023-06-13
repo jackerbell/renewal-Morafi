@@ -1,16 +1,14 @@
-import { useEffect, useState } from "react";
 import { LoadingButton } from "@mui/lab";
-import { useSelector } from "react-redux";
 import { Box, Button, Divider, Stack, TextField, Typography } from "@mui/material";
+import { useEffect, useState } from "react";
 import SendOutlinedIcon from "@mui/icons-material/SendOutlined";
 import DeleteIcon from "@mui/icons-material/Delete";
 import { toast } from "react-toastify";
 import dayjs from "dayjs";
-
-import reviewApi from "../../api/modules/review.api.js";
-
-import Container from "./Container.jsx";
-import TextAvatar from "./TextAvatar.jsx";
+import { useSelector } from "react-redux";
+import Container from "./Container";
+import reviewApi from "../../api/modules/review.api";
+import TextAvatar from "./TextAvatar";
 
 const ReviewItem = ({ review, onRemoved }) => {
   const { user } = useSelector((state) => state.user);
@@ -65,7 +63,7 @@ const ReviewItem = ({ review, onRemoved }) => {
                 width: "max-content"
               }}
             >
-              Remove
+              remove
             </LoadingButton>
           )}
         </Stack>

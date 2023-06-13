@@ -1,40 +1,39 @@
-import { Link } from "react-router-dom";
+import { Drawer, List, ListItemButton, ListItemIcon, ListItemText, Stack, Toolbar, Typography } from "@mui/material";
 import { useDispatch, useSelector } from "react-redux";
-import { Drawer, List, ListItemButton, ListItemIcon, ListItemText, Stack, Toolbar, Typography } from "@mui/material"
+import { Link } from "react-router-dom";
+import menuConfigs from "../../configs/menu.configs";
+import Logo from "./Logo";
+import uiConfigs from "../../configs/ui.configs";
 import DarkModeOutlinedIcon from "@mui/icons-material/DarkModeOutlined";
 import WbSunnyOutlinedIcon from "@mui/icons-material/WbSunnyOutlined";
 
-import menuConfigs from "../../configs/menu.config.js";
-import uiConfigs from "../../configs/ui.config.js";
-import { themeModes } from "../../configs/theme.config.js";
-import { setThemeMode } from "../../redux/features/themeModeSlice.js";
-
-import Logo from "./Logo.jsx";
+import { themeModes } from "../../configs/theme.configs";
+import { setThemeMode } from "../../redux/features/themeModeSlice";
 
 const Sidebar = ({ open, toggleSidebar }) => {
   const dispatch = useDispatch();
 
-  const { user } = useSelector((state)=> state.user);
-  const { appState } = useSelector((state)=> state.appState);
-  const { themeMode } = useSelector((state)=> state.themeMode);
+  const { user } = useSelector((state) => state.user);
+  const { appState } = useSelector((state) => state.appState);
+  const { themeMode } = useSelector((state) => state.themeMode);
 
-  const sidebarWidth = uiConfigs.size.sidebarWidth;
+  const sidebarWidth = uiConfigs.size.sidebarWith;
 
   const onSwitchTheme = () => {
-    const theme = themeMode === themeModes.dark ? themeModes.light : themeModes.dark
+    const theme = themeMode === themeModes.dark ? themeModes.light : themeModes.dark;
     dispatch(setThemeMode(theme));
-  }
+  };
 
   const drawer = (
     <>
-      <Toolbar sx={{paddingY: "20px", color: "text.primary"}}>
+      <Toolbar sx={{ paddingY: "20px", color: "text.primary" }}>
         <Stack width="100%" direction="row" justifyContent="center">
           <Logo />
         </Stack>
       </Toolbar>
-      <List sx={{ paddingX: "30px"}}>
+      <List sx={{ paddingX: "30px" }}>
         <Typography variant="h6" marginBottom="20px">MENU</Typography>
-        {menuConfigs.main.map((item,index)=>(
+        {menuConfigs.main.map((item, index) => (
           <ListItemButton
             key={index}
             sx={{
@@ -44,7 +43,7 @@ const Sidebar = ({ open, toggleSidebar }) => {
             }}
             component={Link}
             to={item.path}
-            onClick={()=> toggleSidebar(false)}
+            onClick={() => toggleSidebar(false)}
           >
             <ListItemIcon>{item.icon}</ListItemIcon>
             <ListItemText disableTypography primary={<Typography textTransform="uppercase">
@@ -55,24 +54,24 @@ const Sidebar = ({ open, toggleSidebar }) => {
 
         {user && (<>
           <Typography variant="h6" marginBottom="20px">PERSONAL</Typography>
-          {menuConfigs.user.map((item,index)=>(
-          <ListItemButton
-            key={index}
-            sx={{
-              borderRadius: "10px",
-              marginY: 1,
-              backgroundColor: appState.includes(item.state) ? "primary.main" : "unset"
-            }}
-            component={Link}
-            to={item.path}
-            onClick={()=> toggleSidebar(false)}
-          >
-            <ListItemIcon>{item.icon}</ListItemIcon>
-            <ListItemText disableTypography primary={<Typography textTransform="uppercase">
-              {item.display}
-            </Typography>} />
-          </ListItemButton>
-        ))}
+          {menuConfigs.user.map((item, index) => (
+            <ListItemButton
+              key={index}
+              sx={{
+                borderRadius: "10px",
+                marginY: 1,
+                backgroundColor: appState.includes(item.state) ? "primary.main" : "unset"
+              }}
+              component={Link}
+              to={item.path}
+              onClick={() => toggleSidebar(false)}
+            >
+              <ListItemIcon>{item.icon}</ListItemIcon>
+              <ListItemText disableTypography primary={<Typography textTransform="uppercase">
+                {item.display}
+              </Typography>} />
+            </ListItemButton>
+          ))}
         </>)}
 
         <Typography variant="h6" marginBottom="20px">THEME</Typography>
@@ -83,23 +82,25 @@ const Sidebar = ({ open, toggleSidebar }) => {
           </ListItemIcon>
           <ListItemText disableTypography primary={
             <Typography textTransform="uppercase">
-                {themeMode === themeModes.dark ? "dark mode" : "light mode"}
+              {themeMode === themeModes.dark ? "dark mode" : "light mode"}
             </Typography>
           } />
         </ListItemButton>
       </List>
     </>
-  )
+  );
 
   return (
     <Drawer
       open={open}
-      onClose={()=>toggleSidebar(false)}
-      sx={{"& .MuiDrawer-Paper":{
-        boxSizing: "border-box",
-        width: sidebarWidth,
-        borderRadius: "0px"
-      }}}
+      onClose={() => toggleSidebar(false)}
+      sx={{
+        "& .MuiDrawer-Paper": {
+          boxSizing: "border-box",
+          widh: sidebarWidth,
+          borderRight: "0px"
+        }
+      }}
     >
       {drawer}
     </Drawer>

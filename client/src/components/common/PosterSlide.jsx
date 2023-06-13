@@ -1,9 +1,7 @@
 import { Box } from "@mui/material";
 import { SwiperSlide } from "swiper/react";
-
-import tmdbConfigs from "../../api/configs/tmdb.configs.js";
-
-import AutoSwiper from "./AutoSwiper.jsx";
+import tmdbConfigs from "../../api/configs/tmdb.configs";
+import AutoSwiper from "./AutoSwiper";
 
 const PosterSlide = ({ posters }) => {
   return (

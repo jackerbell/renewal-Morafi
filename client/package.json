@@ -1,5 +1,9 @@
 {
+<<<<<<< HEAD
   "name": "renewal-morafi",
+=======
+  "name": "m1em",
+>>>>>>> 3629f23 (url update2)
   "version": "0.1.0",
   "private": true,
   "dependencies": {

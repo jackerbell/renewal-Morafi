@@ -6,14 +6,13 @@ export const appStateSlice = createSlice({
     appState: ""
   },
   reducers: {
-    setAppState: (state, action) => {
-      state.appState = action.payload;
-    }
+    setAppState: (state,action) => {
+      state.appState = action.payload
+    },
   }
 });
 
 export const {
   setAppState
-} = appStateSlice.actions;
-
-export default appStateSlice.reducer;
+} = appStateSlice.actions
+export default appStateSlice.reducer

@@ -1,25 +1,29 @@
-import publicClient from "../client/public.client";
+import publicClient from "../client/public.client.js";
 
 const personEndpoints = {
-  detail: ({ personId }) => `person/${personId}`,
-  medias: ({ personId }) => `person/${personId}/medias`
-};
+  detail: ({personId}) => `person/${personId}`,
+  medias: ({personId}) => `person/${personId}/medias`
+}
 
 const personApi = {
   detail: async ({ personId }) => {
     try {
-      const response = await publicClient.get(personEndpoints.detail({ personId }));
+      const response = await publicClient.get(personEndpoints.detail({personId}));
 
       return { response };
-    } catch (err) { return { err }; }
+    } catch (error) {
+      return error;
+    }
   },
   medias: async ({ personId }) => {
     try {
-      const response = await publicClient.get(personEndpoints.medias({ personId }));
+      const response = await publicClient.get(personEndpoints.medias({personId}));
 
       return { response };
-    } catch (err) { return { err }; }
-  }
-};
+    } catch (error) {
+      return error;
+    }
+  },
+}
 
 export default personApi;

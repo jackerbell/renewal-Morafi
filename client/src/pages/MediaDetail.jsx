@@ -1,34 +1,34 @@
-import FavoriteIcon from "@mui/icons-material/Favorite";
-import FavoriteBorderOutlinedIcon from "@mui/icons-material/FavoriteBorderOutlined";
-import PlayArrowIcon from "@mui/icons-material/PlayArrow";
-
-import { LoadingButton } from "@mui/lab";
-import { Box, Button, Chip, Divider, Stack, Typography } from "@mui/material";
 import { useEffect, useState, useRef } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
+import FavoriteIcon from "@mui/icons-material/Favorite";
+import FavoriteBorderOutlinedIcon from "@mui/icons-material/FavoriteBorderOutlined";
+import PlayArrowIcon from "@mui/icons-material/PlayArrow";
+import { LoadingButton } from "@mui/lab";
+import { Box, Button, Chip, Divider, Stack, Typography } from "@mui/material";
 import { toast } from "react-toastify";
 
-import CircularRate from "../components/common/CircularRate";
-import Container from "../components/common/Container";
-import ImageHeader from "../components/common/ImageHeader";
 
-import uiConfigs from "../configs/ui.configs";
-import tmdbConfigs from "../api/configs/tmdb.configs";
-import mediaApi from "../api/modules/media.api";
-import favoriteApi from "../api/modules/favorite.api";
 
-import { setGlobalLoading } from "../redux/features/globalLoadingSlice";
-import { setAuthModalOpen } from "../redux/features/authModalSlice";
-import { addFavorite, removeFavorite } from "../redux/features/userSlice";
+import uiConfigs from "../configs/ui.config.js";
+import tmdbConfigs from "../api/configs/tmdb.configs.js";
+import mediaApi from "../api/modules/media.api.js";
+import favoriteApi from "../api/modules/favorite.api.js";
 
-import CastSlide from "../components/common/CastSlide";
-import MediaVideosSlide from "../components/common/MediaVideosSlide";
-import BackdropSlide from "../components/common/BackdropSlide";
-import PosterSlide from "../components/common/PosterSlide";
-import RecommendSlide from "../components/common/RecommendSlide";
-import MediaSlide from "../components/common/MediaSlide";
-import MediaReview from "../components/common/MediaReview";
+import { setGlobalLoading } from "../redux/features/globalLoadingSlice.js";
+import { setAuthModalOpen } from "../redux/features/authModalSlice.js";
+import { addFavorite, removeFavorite } from "../redux/features/userSlice.js";
+
+import CastSlide from "../components/common/CastSlide.jsx";
+import MediaVideosSlide from "../components/common/MediaVideosSlide.jsx";
+import BackdropSlide from "../components/common/BackdropSlide.jsx";
+import PosterSlide from "../components/common/PosterSlide.jsx";
+import RecommendSlide from "../components/common/RecommendSlide.jsx";
+import MediaSlide from "../components/common/MediaSlide.jsx";
+import MediaReview from "../components/common/MediaReview.jsx";
+import CircularRate from "../components/common/CircularRate.jsx";
+import Container from "../components/common/Container.jsx";
+import ImageHeader from "../components/common/ImageHeader.jsx";
 
 const MediaDetail = () => {
   const { mediaType, mediaId } = useParams();

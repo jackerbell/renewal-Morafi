@@ -39,20 +39,20 @@
 
 # Resource(Reference)
 
-<a href="https://create-react-app.dev/" target="_blank"><img src="https://img.shields.io/badge/React-61DAFB?style=flat-square&logo=react&logoColor=blue"></a>
-<a href="https://reactrouter.com/" target="_blank"><img src="https://img.shields.io/badge/React--router-CA4245?style=flat-square&logo=React-router&logoColor=white"></a>
-<a href="https://create-react-app.dev/" target="_blank"><img src="https://img.shields.io/badge/MUI-007FFF?style=flat-square&logo=mui&logoColor=white"></a>
-<a href="https://mongoosejs.com/" target="_blank"><img src="https://img.shields.io/badge/Mongoose-880000?style=flat-square&logo=mongoose&logoColor=white"></a>
+<a href="https://create-react-app.dev/" target="_blank" rel="noopener noreferrer"><img src="https://img.shields.io/badge/React-61DAFB?style=flat-square&logo=react&logoColor=blue"></a>
+<a href="https://reactrouter.com/" target="_blank" rel="noopener noreferrer"><img src="https://img.shields.io/badge/React--router-CA4245?style=flat-square&logo=React-router&logoColor=white"></a>
+<a href="https://create-react-app.dev/" target="_blank" rel="noopener noreferrer"><img src="https://img.shields.io/badge/MUI-007FFF?style=flat-square&logo=mui&logoColor=white"></a>
+<a href="https://mongoosejs.com/" target="_blank" rel="noopener noreferrer"><img src="https://img.shields.io/badge/Mongoose-880000?style=flat-square&logo=mongoose&logoColor=white"></a>
 <br/>
-<a href="https://expressjs.com/" target="_blank"><img src="https://img.shields.io/badge/Express-000000?style=flat-square&logo=Express&logoColor=white"></a>
-<a href="https://express-validator.github.io/docs/" target="_blank"><img src="https://img.shields.io/badge/Express--validator-grey?style=flat-square&logoColor=white"></a>
-<a href="https://formik.org/" target="_blank"><img src="https://img.shields.io/badge/Formik-blue?style=flat-square&logoColor=white"></a>
-<a href="https://github.com/jquense/yup/" target="_blank"><img src="https://img.shields.io/badge/Yup-blue?style=flat-square&logoColor=white"></a>
+<a href="https://expressjs.com/" target="_blank" rel="noopener noreferrer"><img src="https://img.shields.io/badge/Express-000000?style=flat-square&logo=Express&logoColor=white"></a>
+<a href="https://express-validator.github.io/docs/" target="_blank" rel="noopener noreferrer"><img src="https://img.shields.io/badge/Express--validator-grey?style=flat-square&logoColor=white"></a>
+<a href="https://formik.org/" target="_blank" rel="noopener noreferrer"><img src="https://img.shields.io/badge/Formik-blue?style=flat-square&logoColor=white"></a>
+<a href="https://github.com/jquense/yup/" target="_blank" rel="noopener noreferrer"><img src="https://img.shields.io/badge/Yup-blue?style=flat-square&logoColor=white"></a>
 <br/>
-<a href="https://axios-http.com/" target="_blank"><img src="https://img.shields.io/badge/Axios-5A29E4?style=flat-square&logo=axios&logoColor=white"></a>
-<a href="https://www.themoviedb.org/" target="_blank"><img src="https://img.shields.io/badge/TMDB-01B4E4?style=flat-square&logo=the movie database&logoColor=white"></a>
-<a href="https://swiperjs.com/" target="_blank"><img src="https://img.shields.io/badge/Swiper-6332F6?style=flat-square&logo=swiper&logoColor=white"></a>
-<a href="https://github.com/auth0/node-jsonwebtoken" target="_blank"><img src="https://img.shields.io/badge/JWT-000000?style=flat-square&logo=jsonwebtokens&logoColor=white"></a>
+<a href="https://axios-http.com/" target="_blank" rel="noopener noreferrer"><img src="https://img.shields.io/badge/Axios-5A29E4?style=flat-square&logo=axios&logoColor=white"></a>
+<a href="https://www.themoviedb.org/" target="_blank" rel="noopener noreferrer"><img src="https://img.shields.io/badge/TMDB-01B4E4?style=flat-square&logo=the movie database&logoColor=white"></a>
+<a href="https://swiperjs.com/" target="_blank" rel="noopener noreferrer"><img src="https://img.shields.io/badge/Swiper-6332F6?style=flat-square&logo=swiper&logoColor=white"></a>
+<a href="https://github.com/auth0/node-jsonwebtoken" target="_blank" rel="noopener noreferrer"><img src="https://img.shields.io/badge/JWT-000000?style=flat-square&logo=jsonwebtokens&logoColor=white"></a>
 
 <br/>
 <br/>

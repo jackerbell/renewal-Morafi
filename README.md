@@ -10,7 +10,7 @@
 <br>
 
 # deploy
-> Enterance is here → <a href="https://renewal-morafi-client.vercel.app/" target=_blank>Morafi!</a> 
+> Enterance is here → <a href="https://renewal-morafi.vercel.app/" target=_blank>Morafi!</a> 
 
 <br>
 <br>

@@ -6,14 +6,14 @@ export const authModalSlice = createSlice({
     authModalOpen: false
   },
   reducers: {
-    setAuthModalOpen: (state,action) => {
-      state.authModalOpen = action.payload
-    },
+    setAuthModalOpen: (state, action) => {
+      state.authModalOpen = action.payload;
+    }
   }
 });
 
 export const {
   setAuthModalOpen
-} = authModalSlice.actions
+} = authModalSlice.actions;
 
-export default authModalSlice.reducer
+export default authModalSlice.reducer;

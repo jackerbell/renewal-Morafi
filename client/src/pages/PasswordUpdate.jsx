@@ -1,20 +1,16 @@
-import { useState } from "react";
-import { useNavigate } from "react-router-dom";
-import { useDispatch } from "react-redux";
 import { LoadingButton } from "@mui/lab";
 import { Box, Stack, TextField } from "@mui/material";
-import { toast } from "react-toastify";
 import { useFormik } from "formik";
 import * as Yup from "yup";
-
-import uiConcigs from "../configs/ui.config.js";
-import userApi from "../api/modules/user.api.js";
-import { setUser } from "../redux/features/userSlice.js";
-import { setAuthModalOpen, setAuthOpen } from "../redux/features/authModalSlice.js";
-
-import Container from "../components/common/Container.jsx";
-
-
+import Container from "../components/common/Container";
+import uiConfigs from "../configs/ui.configs";
+import { useState } from "react";
+import userApi from "../api/modules/user.api";
+import { toast } from "react-toastify";
+import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { setUser } from "../redux/features/userSlice";
+import { setAuthModalOpen } from "../redux/features/authModalSlice";
 
 const PasswordUpdate = () => {
   const [onRequest, setOnRequest] = useState(false);
@@ -26,44 +22,45 @@ const PasswordUpdate = () => {
     initialValues: {
       password: "",
       newPassword: "",
-      confirmNewPassword:""
+      confirmNewPassword: ""
     },
     validationSchema: Yup.object({
       password: Yup.string()
-        .min(8, "Password confirm 8 characters")
-        .required("Password is required"),
+        .min(8, "password minimum 8 characters")
+        .required("password is required"),
       newPassword: Yup.string()
-        .min(8, "New password confirm 8 characters")
-        .required("New password is required"),
+        .min(8, "newPassword minimum 8 characters")
+        .required("newPassword is required"),
       confirmNewPassword: Yup.string()
         .oneOf([Yup.ref("newPassword")], "confirmNewPassword not match")
-        .min(8, "New password confirm 8 characters")
-        .required("New password is required")
+        .min(8, "confirmNewPassword minimum 8 characters")
+        .required("confirmNewPassword is required")
     }),
     onSubmit: async values => onUpdate(values)
   });
 
   const onUpdate = async (values) => {
-    if(onRequest) return;
+    if (onRequest) return;
     setOnRequest(true);
 
     const { response, err } = await userApi.passwordUpdate(values);
 
     setOnRequest(false);
 
-    if(err) toast.error(err.message);
-    if(response) {
+    if (err) toast.error(err.message);
+    if (response) {
       form.resetForm();
       navigate("/");
       dispatch(setUser(null));
       dispatch(setAuthModalOpen(true));
-      toast.success("Update password success! Please re-login!!");
+      toast.success("Update password success! Please re-login");
     }
-  }
+  };
+
   return (
-    <Box sx={{...uiConcigs.style.mainContent}}>
+    <Box sx={{ ...uiConfigs.style.mainContent }}>
       <Container header="update password">
-        <Box component="form" maxWidth="25rem" onSubmit={form.handleSubmit}>
+        <Box component="form" maxWidth="400px" onSubmit={form.handleSubmit}>
           <Stack spacing={2}>
             <TextField
               type="password"
@@ -98,16 +95,17 @@ const PasswordUpdate = () => {
               error={form.touched.confirmNewPassword && form.errors.confirmNewPassword !== undefined}
               helperText={form.touched.confirmNewPassword && form.errors.confirmNewPassword}
             />
+
+            <LoadingButton
+              type="submit"
+              variant="contained"
+              fullWidth
+              sx={{ marginTop: 4 }}
+              loading={onRequest}
+            >
+              update password
+            </LoadingButton>
           </Stack>
-          <LoadingButton
-            type="submit"
-            variant="contained"
-            fullWidth
-            sx={{ marginTop: 4 }}
-            loading={onRequest} 
-          >
-            Update Password!
-          </LoadingButton>
         </Box>
       </Container>
     </Box>

@@ -16,7 +16,7 @@
 <br>
 
 # Develop period
-> 2023.05.03 ~ 2023.06.09
+> 2023.05.08 ~ 2023.06.09
 
 <br>
 <br>
@@ -28,11 +28,6 @@
 4. Review comment
 5. Favorite(♥)
 6. Password update
-
-<br>
-
-## to be added next
- 1. remove Favorite, Review comment 
 
 <br>
 <br>
@@ -54,8 +49,15 @@
 <a href="https://swiperjs.com/" target="_blank" rel="noopener noreferrer"><img src="https://img.shields.io/badge/Swiper-6332F6?style=flat-square&logo=swiper&logoColor=white"></a>
 <a href="https://github.com/auth0/node-jsonwebtoken" target="_blank" rel="noopener noreferrer"><img src="https://img.shields.io/badge/JWT-000000?style=flat-square&logo=jsonwebtokens&logoColor=white"></a>
 
-<br/>
-<br/>
+<br>
+<br>
+
+# test!
+id: tester@test.com
+pw: test1234
+
+<br>
+<br>
 
 # Preview
 ![movies](https://github.com/jackerbell/renewal-Morafi/assets/65724413/0f4b65c8-ff27-4d5f-a935-fcd0fa245d52)

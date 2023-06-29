@@ -1,10 +1,8 @@
-# New Morafi!
-```javascript
-  "Its Renewal Morafi"
-```
+# Morafi UPDATED!
+![리드미메인화면](https://github.com/jackerbell/renewal-Morafi/assets/65724413/5d410afa-7355-4355-a291-46bd85033fca)
 
-# Intro
-> Netflix, Laftel, MegaBox, wavve... 등 국내외 영화 및 사이트들을 참조하며 만든 사이트로 과거 <a href="https://github.com/jackerbell/Morafi" target="_blank">프로젝트</a>에서 업데이트 했습니다.
+# Intro(모라피의 의미 부연 설명, 개발기획까지 함 꼐 포함)
+> Netflix, Laftel, MegaBox, wavve... 등 국내외 영화 및 사이트들을 참조하며 만든 사이트로 과거 <a href="https://github.com/jackerbell/Morafi" target="_blank">프로젝트</a>에서 업데이트 했습니다. <br> 기존의 props drill, `R`을 이용해 자체적으로 만든 데이터베이스의 한계 등 여러 단점들을 보완하기 위해 이번에  TDMB api, MUI 를 활용해 보다 효율적인 UI를 구성할 수 있었고 데이터의 경우 NOSQL방식이 좀 더 효율적이라고 판단해서 MongoDB 및 Atlas를 이용하게 되었습니다. <br>
 
 <br>
 <br>
@@ -15,13 +13,17 @@
 <br>
 <br>
 
-# Develop period
+# Develop period(세부적으로 나눌예정)
 > 2023.05.08 ~ 2023.06.09
 
 <br>
 <br>
 
-# Functions
+순서도 들어갈 자리
+
+<br>
+<br>
+# Functions(api 명세서로 대체)
 1. Sign in/up 
 2. Log in/out
 3. Search

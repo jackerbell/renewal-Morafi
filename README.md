@@ -1,32 +1,76 @@
 # Morafi UPDATED!
 ![리드미메인화면](https://github.com/jackerbell/renewal-Morafi/assets/65724413/5d410afa-7355-4355-a291-46bd85033fca)
 
-# Intro
-> Netflix, Laftel, MegaBox, wavve... 등 국내외 영화 및 사이트들을 참조하며 만든 사이트로 과거 <a href="https://github.com/jackerbell/Morafi" target="_blank">프로젝트</a>에서 업데이트 했습니다. <br> 기존의 props drill, `R`을 이용해 자체적으로 만든 데이터베이스의 한계 등 여러 단점들을 보완하기 위해 전면 개편했습니다. <br>
+🧇  Intro(기획 배경 및 소개)
+> <b>Mo</b>vie + g<b>raffi</b>ti = <b>Morafi!</b> <br>
+> Netflix, Laftel, MegaBox, wavve... 등 국내외 영화 및 사이트들을 참조하며 만든 사이트로 과거 <a href="https://github.com/jackerbell/Morafi" target="_blank">프로젝트</a>에서 업데이트 했습니다. <br> 기존의 props drill, `R`을 이용해 자체적으로 만든 데이터베이스의 한계(이미지 해상도, 광고 영상, 세부 정보 부족..) 등 여러 단점들을 보완하기 위해 전면 개편했습니다. <br>
 > 이번에  TDMB api, MUI 를 활용해 보다 효율적으로 UI를 구현할 수 있었고 데이터의 경우 NOSQL방식이 현재 프로젝트에 좀 더 적합하고 배포환경에 유리하다고 판단해서 MongoDB 및 Atlas를 이용했습니다. <br>
 > 새로운 아이디어를 고집하기 보다는 기존에 접했던 환경을 먼저 구현해보고 싶었고, `영화 커뮤니티 운영`이라는 제 개인적인 목표의 첫걸음으로 구현한 프로젝트입니다. <br>
 
 <br>
 <br>
 
-# deploy
+🚀 deploy
 > Enterance is here → <a href="https://renewal-morafi.vercel.app/" target=_blank>Morafi!</a> 
 
 <br>
 <br>
 
-# Develop period
-* 2023.05.08 ~ 2023.06.09
-* 2023.06.12 ~ Proceeding
+🧑🏻‍💻 Tech Stack <br>
+
+FrontEnd <br>
+
+<a href="https://create-react-app.dev/" target="_blank" rel="noopener noreferrer"><img src="https://img.shields.io/badge/React-61DAFB?style=flat-square&logo=react&logoColor=blue"></a>
+<a href="https://reactrouter.com/" target="_blank" rel="noopener noreferrer"><img src="https://img.shields.io/badge/React--router-CA4245?style=flat-square&logo=React-router&logoColor=white"></a>
+<a href="https://mui.com/" target="_blank" rel="noopener noreferrer"><img src="https://img.shields.io/badge/MUI-007FFF?style=flat-square&logo=mui&logoColor=white"></a>
+<a href="https://swiperjs.com/" target="_blank" rel="noopener noreferrer"><img src="https://img.shields.io/badge/Swiper-6332F6?style=flat-square&logo=swiper&logoColor=white"></a>
+<a href="https://axios-http.com/" target="_blank" rel="noopener noreferrer"><img src="https://img.shields.io/badge/Axios-5A29E4?style=flat-square&logo=axios&logoColor=white"></a>
+<a href="https://formik.org/" target="_blank" rel="noopener noreferrer"><img src="https://img.shields.io/badge/Formik-blue?style=flat-square&logoColor=white"></a>
+<a href="https://github.com/jquense/yup/" target="_blank" rel="noopener noreferrer"><img src="https://img.shields.io/badge/Yup-blue?style=flat-square&logoColor=white"></a>
+
+<br>
+
+BackEnd <br>
+
+<a href="https://expressjs.com/" target="_blank" rel="noopener noreferrer"><img src="https://img.shields.io/badge/Express-000000?style=flat-square&logo=Express&logoColor=white"></a>
+<a href="https://express-validator.github.io/docs/" target="_blank" rel="noopener noreferrer"><img src="https://img.shields.io/badge/Express--validator-grey?style=flat-square&logoColor=white"></a>
+<a href="https://axios-http.com/" target="_blank" rel="noopener noreferrer"><img src="https://img.shields.io/badge/Axios-5A29E4?style=flat-square&logo=axios&logoColor=white"></a>
+<a href="https://github.com/auth0/node-jsonwebtoken" target="_blank" rel="noopener noreferrer"><img src="https://img.shields.io/badge/JWT-000000?style=flat-square&logo=jsonwebtokens&logoColor=white"></a>
+
+<br>
+
+DB <br>
+
+<a href="https://www.themoviedb.org/" target="_blank" rel="noopener noreferrer"><img src="https://img.shields.io/badge/TMDB-01B4E4?style=flat-square&logo=the movie database&logoColor=white"></a>
+<a href="https://mongoosejs.com/" target="_blank" rel="noopener noreferrer"><img src="https://img.shields.io/badge/Mongoose-880000?style=flat-square&logo=mongoose&logoColor=white"></a>
 
 <br>
 <br>
 
-# Service Flow Chart
+🗓 Develop period
+* 2023.05.08 ~ 2023.06.09 (1차)
+* 2023.06.12 ~ Proceeding (Refactoring)
+
+<br>
+<br>
+
+📝 Service Flow Chart <br>
 ![diagram drawio (1)](https://github.com/jackerbell/renewal-Morafi/assets/65724413/5e78a3fa-b406-44cb-8d6c-38c11f836b52)
 
 <br>
 <br>
+
+💡 core function
+1.  Sign up / Sign in / Sign out
+2.  Save movie to Favorite list (Remove that)
+3.  Write review(comment) for movie (Delete that)
+4.  Search movies | tv series | people(actor)
+5.  Light / Dark mode(theme)
+
+<br>
+<br>
+🎨 demonstration video
+
 
 # Morafi API Specification
 ## Schema 
@@ -342,26 +386,6 @@ router.get("/detail/:mediaId", mediaController.getDetail);
 ```javascript
 router.get("/:mediaCategory", mediaController.getList);
 ```
-
-<br>
-<br>
-
-# Resource(Reference)
-
-<a href="https://create-react-app.dev/" target="_blank" rel="noopener noreferrer"><img src="https://img.shields.io/badge/React-61DAFB?style=flat-square&logo=react&logoColor=blue"></a>
-<a href="https://reactrouter.com/" target="_blank" rel="noopener noreferrer"><img src="https://img.shields.io/badge/React--router-CA4245?style=flat-square&logo=React-router&logoColor=white"></a>
-<a href="https://create-react-app.dev/" target="_blank" rel="noopener noreferrer"><img src="https://img.shields.io/badge/MUI-007FFF?style=flat-square&logo=mui&logoColor=white"></a>
-<a href="https://mongoosejs.com/" target="_blank" rel="noopener noreferrer"><img src="https://img.shields.io/badge/Mongoose-880000?style=flat-square&logo=mongoose&logoColor=white"></a>
-<br/>
-<a href="https://expressjs.com/" target="_blank" rel="noopener noreferrer"><img src="https://img.shields.io/badge/Express-000000?style=flat-square&logo=Express&logoColor=white"></a>
-<a href="https://express-validator.github.io/docs/" target="_blank" rel="noopener noreferrer"><img src="https://img.shields.io/badge/Express--validator-grey?style=flat-square&logoColor=white"></a>
-<a href="https://formik.org/" target="_blank" rel="noopener noreferrer"><img src="https://img.shields.io/badge/Formik-blue?style=flat-square&logoColor=white"></a>
-<a href="https://github.com/jquense/yup/" target="_blank" rel="noopener noreferrer"><img src="https://img.shields.io/badge/Yup-blue?style=flat-square&logoColor=white"></a>
-<br/>
-<a href="https://axios-http.com/" target="_blank" rel="noopener noreferrer"><img src="https://img.shields.io/badge/Axios-5A29E4?style=flat-square&logo=axios&logoColor=white"></a>
-<a href="https://www.themoviedb.org/" target="_blank" rel="noopener noreferrer"><img src="https://img.shields.io/badge/TMDB-01B4E4?style=flat-square&logo=the movie database&logoColor=white"></a>
-<a href="https://swiperjs.com/" target="_blank" rel="noopener noreferrer"><img src="https://img.shields.io/badge/Swiper-6332F6?style=flat-square&logo=swiper&logoColor=white"></a>
-<a href="https://github.com/auth0/node-jsonwebtoken" target="_blank" rel="noopener noreferrer"><img src="https://img.shields.io/badge/JWT-000000?style=flat-square&logo=jsonwebtokens&logoColor=white"></a>
 
 <br>
 <br>
